@@ -1,0 +1,14 @@
+'use strict';
+
+const ipToInt = (ip = '127.0.0.1') => {
+  const bytes = ip.split('.').map(Number);
+  return bytes.reduce((acc, byte) => (acc << 8) + byte, 0);
+};
+
+console.log(ipToInt('127.0.0.1'));       
+console.log(ipToInt('10.0.0.1'));        
+console.log(ipToInt('192.168.1.10'));    
+console.log(ipToInt('165.225.133.150')); 
+console.log(ipToInt('0.0.0.0'));         
+console.log(ipToInt('8.8.8.8'));         
+console.log(ipToInt());                  
